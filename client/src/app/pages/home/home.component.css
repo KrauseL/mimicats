@@ -1,0 +1,61 @@
+
+.aside{
+    width: 300px;
+    padding: 10px;
+    padding-top: 20px;
+    height:max-content;
+    float: left;
+    background-color: rgb(255, 251, 233);
+    height: 300vh;
+    margin-right: 30px;
+    display: block;
+    
+
+}
+
+.aside-navegacion ul{
+    list-style: none;
+    padding-left: 10px;
+
+}
+.aside-navegacion ul li{
+    margin-bottom: 15px;
+}
+
+.contenido{
+    padding-top: 20px;
+    
+
+}
+
+.usuarios-ran{
+    margin-top: 50px;
+    display: block;
+
+}
+.usuario-ran-img{
+    height: 200px;
+    overflow: hidden;
+}
+.usuario-ran-img img{
+    position: relative;
+    top: -130px;
+}
+.usuarios-ran-perfil{
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    display: inline-block;
+
+}
+.usuarios-ran-perfil img{
+    width: 100px;
+}
+.usuarios-ran h5{
+    display: inline-block;
+}
+
+.veterinarias{
+    margin-top: 50px;
+}

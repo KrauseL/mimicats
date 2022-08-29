@@ -1,0 +1,59 @@
+<header>
+  <nav class="navbar navbar-expand-lg header-navegcion" >
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" style="color: black;">Mimicats</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav header-enlaces">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li>
+        </ul>
+        <div class="header-registro" *ngIf="!identidad">
+          <span><a routerLink="/login">loguear</a></span>
+        </div>
+        <div class="btn-perfil" *ngIf="identidad">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              {{nombre}} 
+            </button>
+            <ul class="dropdown-menu btn-perfil-desplegable" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" [routerLink]="['/editar-perfil',iden]">Editar perfil</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/perfil',iden]">Mi perfil</a></li>
+              <li><a class="dropdown-item" href="#" (click)="logout()">Cerrar secion</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+</header>
+
+<router-outlet></router-outlet>
+
+<footer>
+  <div class="container">
+    <div class="footer-info">
+      <span>Mimicats</span>
+      <ul>
+        <li>Quienes somos</li>
+        <li>Reglas del sitio</li>
+        <li>Cookies</li>
+        <li>No al maltrato animal</li>
+      </ul>
+    </div>
+  </div>
+</footer>

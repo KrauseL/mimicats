@@ -1,0 +1,93 @@
+<main>
+  <div class="container">
+    <div class="editar-perfil">
+      <h1>Editar perfil</h1>
+
+      <form #formEditarUsuario="ngForm" (submit)="ngSubmit(formEditarUsuario)">
+        <div class="row">
+          <div class="col">
+            <div class="info-personal">
+              <div class="alert alert-success" role="alert" *ngIf="status == 'correcto'">
+                Se editado correctamente
+              </div>
+              <div class="alert alert-danger" role="alert" *ngIf="status == 'error'">
+                Se edito incorrectamente
+              </div>
+              <span>Informacion de contacto</span>
+
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="userNombre" aria-describedby="emailHelp"
+                  [value]="form.nombre" name="nombre" [(ngModel)]="form.nombre" />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email</label>
+                <input type="text" class="form-control" id="userEmail" aria-describedby="emailHelp" [value]="form.email"
+                  name="email" [(ngModel)]="form.email" />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Numero</label>
+                <input type="text" class="form-control" id="userNumero" aria-describedby="emailHelp"
+                  [value]="form.numero" name="numero" [(ngModel)]="form.numero" />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Ubicacion</label>
+                <input type="text" class="form-control" id="userUbicacion" [value]="form.ubicacion" name="ubicacion"
+                  [(ngModel)]="form.ubicacion" />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                <input type="text" class="form-control" id="userContrasena" [value]="form.contrasena" name="contrasena"
+                  [(ngModel)]="form.contrasena" />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Descripcion</label>
+                <textarea class="form-control" id="userDescripcion" style="height: 100px" [value]="form.descripcion"
+                  name="descripcion" [(ngModel)]="form.descripcion"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Editar</button>
+            </div>
+          </div>
+          <div class="col">
+            <div class="info-img">
+              <span>Portada</span>
+              <image-cropper [imageChangedEvent]="imgPreviaPortada" [maintainAspectRatio]="true" [aspectRatio]="4 / 3"
+              format="png" (imageCropped)="imageCroppedPortada($event)"></image-cropper>
+              <div class="info-img-portada" *ngIf="imageChangedPortada.length==0">
+                <img
+                  [src]="portada"
+                  alt="" />
+              </div>
+              <div class="info-img-portada" *ngIf="imageChangedPortada.length!=0">
+                <img
+                  [src]="croppedPortada"
+                  alt="" />
+              </div>
+              <div class="Input-file">
+                <span>Seleccionar</span>
+                <input type="file" (change)="filePortada($event)">
+              </div>
+              <div class="info-img-perfil" *ngIf="imageChangedEvent.length==0">
+                <img [src]="perfil" alt="" />
+              </div>
+              <div class="info-img-perfil" *ngIf="imageChangedEvent.length!=0">
+                <img [src]="croppedImage" />
+              </div>
+
+              <div class="input-img-perfil" id="src-file1">
+                <div class="Input-file">
+                  <span>Seleccionar</span>
+                  <input type="file" (change)="filePerfil($event)" />
+                </div>
+                <image-cropper [imageChangedEvent]="imgPrevia" [maintainAspectRatio]="true" [aspectRatio]="4 / 3"
+                  format="png" (imageCropped)="imageCropped($event)"></image-cropper>
+
+              </div>
+              <i class="fa-solid fa-apple-whole"></i>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>

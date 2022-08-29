@@ -1,0 +1,25 @@
+<div *ngFor="let i of array">
+    <div class="card mb-3">
+        <div class="public">
+            <div class="dropdown">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Opciones
+                </a>
+              
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" (click)='eliminarPublicacion(i._id)' >Eliminar</a></li>
+                  <li><a class="dropdown-item" [routerLink]="['/publicacion',i._id]">Ver</a></li>
+                </ul>
+              </div> 
+            <div class="public-img">
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ft3.kn3.net%2Ftaringa%2F0%2F0%2FF%2F4%2F0%2FA%2FTuViejaMilf%2F21B.jpg&f=1&nofb=1"
+                    class="card-img-top" alt="...">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{i.titulo}}</h5>
+                <p class="card-text">{{i.descripcion}}</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+    </div>
+</div>

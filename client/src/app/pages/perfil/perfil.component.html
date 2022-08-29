@@ -1,0 +1,44 @@
+
+<main>
+    <div class="container">
+        <div class="portada">
+            <div class="portada-img">
+                <img [src]="portada"
+                    alt="">
+            </div>
+            <div class="info-perfil">
+                <div class="info-perfil-img">
+                    <img [src]="perfil"
+                        alt="">
+                </div>
+                <h1>{{nombre}}</h1>
+            </div>
+        </div>
+        <div class="perfil-contenido">
+            <div class="row">
+                <div class="col-4">
+                    <span class="titulo1">Informacion de perfil</span>
+                    <span><a [routerLink]="['/editar-perfil',id]">Editar perfil</a></span>
+                    <span class="titulo2">Contacto</span>
+                    <ul>
+                        <li>Numero: {{numero}}</li>
+                        <li>Ubicacion: {{ubicacion}}</li>
+                        <li>Email: {{email}}</li>
+                    </ul>
+                    <span class="titulo2">Descripcion</span>
+                    <p>{{descripcion}}</p>
+                </div>
+                <div class="col-8">
+                    <span class="titulo1">Publicaciones</span>
+                    <div class="public-agregar">
+                        <a  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+                            Agregar 
+                        </a>
+                    </div>
+                    <app-user-publicacion [id]="id"></app-user-publicacion>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-modal-public ></app-modal-public>
+</main>

@@ -1,0 +1,34 @@
+.publicacion{
+    margin-top: 50px;
+}
+.animal{
+    overflow: hidden;
+    height: 200px;
+    width: 100%;
+    
+}
+.animal img{
+    width: 100%;
+    place-content: center;
+}
+
+.foto-animales{
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+}
+.foto-animal-item{
+    display: inline-block;
+}
+.foto-animal-item img{
+    width: 50px;
+    margin-right: 10px;
+
+}
+.foto-animal-item img:hover{
+    cursor: pointer;
+}
+
+.btn-editar-public{
+    margin-top: 40px;
+}

@@ -1,0 +1,46 @@
+<main>
+    <div class="container">
+        <div class="publicacion">
+            <div class="row">
+                <div class="col">
+                    
+                    <div class="animal">
+                        <img src="{{img}}" alt="">
+                    </div>
+                    <div class="foto-animales">
+                        <div class="foto-animal-item" *ngFor="let i of arrayImg">
+                            <img (click)="imgPublic(i)" src="{{i}}"alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="info-animal">
+                        <h1>{{public.titulo}}</h1>
+                        <span>Descripcion:</span>
+                        <p>{{public.descripcion}}</p>
+                        <span>Caracteristicas:</span>
+                        <ul>
+                            <li>Vacunas: {{public.vacunas}}</li>
+                            <li>Castrado: {{public.castrado}}</li>
+                            <li>Animal: {{public.animal}}</li>
+                            <li>Problemas medicos: {{public.problemasMedicos}}</li>
+                            <li>Años: {{public.anos}}</li>
+                            <li>Genero: {{public.genero}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="info-contacto">
+                        <span class="titulo1">{{user.nombre}}</span>
+                        <ul>
+                            <li>Email: {{user.email}}</li>
+                            <li>Numero: {{user.numero}}</li>
+                            <li>Ubicacion: {{user.ubicacion}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+

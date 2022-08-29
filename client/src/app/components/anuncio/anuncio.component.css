@@ -1,0 +1,12 @@
+.public{
+    display: block;
+    background-repeat:no-repeat;
+    background-position: center center;
+    background-image: url(https://img.freepik.com/vector-gratis/silueta-dibujos-animados-gato-negro-saludando-pared-agitando-dibujo-lineal-lindo-gatito_68708-1392.jpg?w=2000);
+/* 
+    background-color: rgb(197, 162, 139); */
+    width: 100%;
+    height: 130px;
+    margin-top: 30px;
+    border-radius: 25px;
+}

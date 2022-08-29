@@ -1,0 +1,26 @@
+<main>
+    <div class="container">
+        <app-anuncio></app-anuncio>
+        <div class="login">
+            <h1>Logueate</h1>
+            <div class="alert alert-success" role="alert" *ngIf="status=='logueado'">
+                <span>Se ha logueado correctamente!</span>
+            </div>
+            <div class="alert alert-danger" role="alert" *ngIf="status=='error'">
+                <span>Error al logueado!</span>
+            </div>
+            <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" #email="ngModel" [(ngModel)]="user.email">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" name="contrasena" #contrasena="ngModel" [(ngModel)]="user.contrasena">
+                    <div id="emailHelp" class="form-text">¿No tienes una cuenta? <a href="">Registrate</a></div>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </div>
+</main>

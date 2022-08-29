@@ -1,0 +1,39 @@
+<main>
+    <div class="container">
+        <app-anuncio></app-anuncio>
+        <div class="registro">
+            <h1>Registrate</h1>
+            <div class="alert alert-success" role="alert" *ngIf="status=='registrado'">
+                <span>Se ha registrado correctamente!</span>
+            </div>
+            <div class="alert alert-danger" role="alert" *ngIf="status=='error'">
+                <span>Error al registrarse!</span>
+            </div>
+
+            <form #registroForm="ngForm" (ngSubmit)="onSubmit(registroForm)">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Nombre</label>
+                    <input type="name" class="form-control" id="nombre" aria-describedby="emailHelp" name="nombre"
+                        #nombre="ngModel" [(ngModel)]="user.nombre" required>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email"
+                        #email="ngModel" [(ngModel)]="user.email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="contrasena" #contrasena="ngModel" name="contrasena"
+                        [(ngModel)]="user.contrasena" required>
+                </div>
+                <!-- <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Confirmar contraseña</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
+                </div> -->
+                <button type="submit" class="btn btn-primary">Enviar</button>
+                
+            </form>
+        </div>
+        
+    </div>
+</main>

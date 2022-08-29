@@ -1,0 +1,62 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Agregar publicacion</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <div class="alert alert-success" role="alert" *ngIf="alerta=='exito'">
+                    Publicacion agregada con exito!
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="alerta=='error'">
+                    Error al agregar publicacion!
+                </div>
+                <form #formAgregarPublicacion="ngForm" (submit)="ngSubmit(formAgregarPublicacion)">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Titulo</label>
+                        <input type="text" class="form-control" id="public-titulo" aria-describedby="emailHelp" name="titulo" #titulo="ngModel" [(ngModel)]="publicaciones.titulo">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label" >Descripcion</label>
+                        <textarea class="form-control" id="public-descripcion"
+                            style="height: 100px" name="descripcion" #descripcion="ngModel" [(ngModel)]="publicaciones.descripcion"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Tipo de animal</label>
+                        <input type="text" class="form-control" id="public-animal" aria-describedby="emailHelp" name="animal" #animal="ngModel" [(ngModel)]="publicaciones.animal">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Genero</label>
+                        <input type="text" class="form-control" id="public-genero" aria-describedby="emailHelp" name="genero" #genero="ngModel" [(ngModel)]="publicaciones.genero">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Edad</label>
+                        <input type="text" class="form-control" id="public-anos" aria-describedby="emailHelp" name="anos" #anos="ngModel" [(ngModel)]="publicaciones.anos">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Problemas medicos</label>
+                        <input type="text" class="form-control" id="public-problemasMedicos" aria-describedby="emailHelp" name="problemasMedicos" #problemasMedicos="ngModel" [(ngModel)]="publicaciones.problemasMedicos">
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="castrado" #castrado="ngModel" [(ngModel)]="publicaciones.castrado">
+                        <label class="form-check-label" for="exampleCheck1">Castrado</label>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck2" name="vacunas" #vacunas="ngModel" [(ngModel)]="publicaciones.vacunas">
+                        <label class="form-check-label" for="exampleCheck1">Vacunas</label>
+                      </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Agregar imagen</label>
+                        <div class="agregar-img">
+
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" (click)="mostrarPublicacion()">Publicar</button> 
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

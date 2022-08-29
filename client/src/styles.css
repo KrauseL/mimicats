@@ -1,0 +1,22 @@
+body{
+    
+    background-color: rgb(255, 251, 233);
+    
+    font-family: 'Passion One', cursive;
+}
+h1,.titulo1{
+    font-size: 25px;
+}
+.titulo2{
+    font-size: 20px;
+}
+.separar{
+    display: block;
+    background-color: rgb(209, 205, 189);
+    
+    width: 100%;
+    height: 1px;
+}
+
+
+
